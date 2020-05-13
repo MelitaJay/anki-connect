@@ -687,6 +687,14 @@ class AnkiConnect:
         mm.add(m)
         return m
 
+    @util.api()
+    def deleteModel(self, modelName):
+        model = self.collection().models.byName(modelName)
+        if model is None:
+            raise Exception('model was not found: {}'.format(modelName))
+        else:
+            self.collection().models.byName(modelName)
+
 
     @util.api()
     def modelNamesAndIds(self):
