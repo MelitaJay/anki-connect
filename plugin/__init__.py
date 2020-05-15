@@ -693,7 +693,7 @@ class AnkiConnect:
         if model is None:
             raise Exception('model was not found: {}'.format(modelName))
         else:
-            self.collection().models.byName(modelName)
+            self.collection().models.rem(model)
 
 
     @util.api()
